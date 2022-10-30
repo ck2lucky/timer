@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>타이머</title>
+</head>
+<body>
+    <button class="start" onclick="startPeristentVibrate(1000, 500)">진동</button>
+    <button class="start" onclick="startVibrate(1000)">1초진동</button>
+    <button class="stop" onclick="stopVibrate()">멈춰</button>
+
+    <script>
+        var vibrateInterval;
+
+        // Starts vibration at passed in level
+        function startVibrate(duration) {
+        navigator.vibrate(duration);
+        }
+
+        // Stops vibration
+        function stopVibrate() {
+        // Clear interval and stop persistent vibrating 
+        if(vibrateInterval) clearInterval(vibrateInterval);
+        navigator.vibrate(0);
+        }
+
+        // Start persistent vibration at given duration and interval
+        // Assumes a number value is given
+        function startPeristentVibrate(duration, interval) {
+        vibrateInterval = setInterval(function() {
+        startVibrate(duration);
+        }, interval);
+        }
+    </script>
+</body>
+</html>
