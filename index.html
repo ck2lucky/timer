@@ -34,9 +34,9 @@
     <div class="timer">
         <div class="text">진동을 합니다.</div>    
         <div class="button">
-            <button class="start" onclick="startPeristentVibrate(1000, 500)">진동</button> 
-            <button class="start" onclick="startVibrate(1000)">1초진동 </button> 
-            <button class="stop" onclick="stopVibrate()">멈춰</button> 
+            <button onclick="startPeristentVibrate(1000, 500)">진동</button> 
+            <button onclick="startVibrate(1000)">1초진동 </button> 
+            <button onclick="stopVibrate()">멈춰</button> 
         </div>
     </div>
     
@@ -49,7 +49,8 @@
         // Starts vibration at passed in level
         function startVibrate(duration) {
             navigator.vibrate(duration);
-            text.innerHTML("진동시작!!");
+            text.innerHTML = "진동시작!!";
+            console.log(duration);
         }
 
         // Stops vibration
@@ -57,7 +58,7 @@
         // Clear interval and stop persistent vibrating 
             if(vibrateInterval) clearInterval(vibrateInterval);
                 navigator.vibrate(0);
-            text.innerHTML("진동멈춰!!");
+            text.innerHTML = "진동멈춰!!";
         }
 
         // Start persistent vibration at given duration and interval
@@ -66,7 +67,7 @@
             vibrateInterval = setInterval(function() {
                 startVibrate(duration);
             }, interval);
-            text.innerHTML("진동을 간헐적으로 해!!");
+            text.innerHTML = "진동을 간헐적으로 해!!";
         }
     </script>
 </body>
