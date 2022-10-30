@@ -5,11 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>타이머</title>
+    <style>
+        *{margin: 0; padding:0}
+        body{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height:100vh;
+            width: 100%;
+        }
+    </style>
 </head>
-<body>
-    <button class="start" onclick="startPeristentVibrate(1000, 500)">진동</button>
-    <button class="start" onclick="startVibrate(1000)">1초진동</button>
-    <button class="stop" onclick="stopVibrate()">멈춰</button>
+<body>    
+    <button class="start" onclick="startPeristentVibrate(1000, 500)">진동</button> 
+    <button class="start" onclick="startVibrate(1000)">1초진동 </button> 
+    <button class="stop" onclick="stopVibrate()">멈춰</button> 
 
     <script>
         var vibrateInterval;
